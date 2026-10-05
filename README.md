@@ -6,7 +6,7 @@ The project is designed as preparation for the NCHU–Micron INTENSE semiconduct
 
 ## Status
 
-**Milestone 0: project definition and documentation.** The initial product, requirements, architecture, data plan, and Days 1–14 roadmap are documented. Implementation has not started.
+**Milestones 0–2: documentation, Week 1 data audit, and Week 2 univariate SPC core.** Product and architecture documents, the dataset audit, I-MR calculations, Western Electric rule logic, and learning notebooks are in place. The polished Streamlit dashboard remains a later milestone.
 
 ## Project question
 
@@ -39,10 +39,25 @@ A separate web API or database is not needed for the initial analytics workflow.
 - [Days 1–14 roadmap](docs/05-days-01-14-roadmap.md)
 - [Assumptions and decisions](docs/06-assumptions-decisions.md)
 
+## Run the current checks
+
+From the repository root, create and activate a virtual environment, install `requirements.txt`, then run the audit and constructed SPC checks:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python scripts/audit_secom.py
+python -m unittest discover -s tests -v
+jupyter lab
+```
+
+Open notebooks from the repository root so their relative data paths resolve. Download the SECOM files from the UCI source linked below and place `secom.data`, `secom_labels.data`, and `secom.names` in `data/raw/`; the raw files are intentionally excluded from Git.
+
 ## Important limitations
 
 SECOM contains anonymized sensor variables. Do not assign them physical names such as temperature or pressure without evidence. The dataset is observational: associations do not establish process causes. Control-chart signals call for investigation; they do not identify a cause by themselves. Do not invent product specification limits or claim production readiness.
 
 ## Data source
 
-McCann, M. & Johnston, A. (2008). [SECOM, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/179/secom). The UCI entry lists 1,567 examples, 591 features, timestamps, pass/fail labels, and missing values. Check the source entry and license before redistributing data files.
+McCann, M. & Johnston, A. (2008). [SECOM, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/179/secom). The UCI catalog describes 1,567 examples and 591 features, while the downloaded raw measurement file has 590 numeric columns per row. We document and audit this catalog/file discrepancy rather than inventing a missing feature. The source also provides timestamps, pass/fail labels, and missing values. Check the source entry and license before redistributing data files.

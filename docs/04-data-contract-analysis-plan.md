@@ -4,15 +4,15 @@
 
 UCI Machine Learning Repository, **SECOM**: <https://archive.ics.uci.edu/dataset/179/secom>.
 
-The UCI description reports 1,567 examples, 591 real-valued features, a label file with classifications and timestamps, and missing values. The documented labels are `-1` for pass and `+1` for fail; UCI reports 104 fails. Verify these properties against the downloaded files rather than assuming every local copy is identical.
+The UCI catalog and `secom.names` describe 1,567 examples and 591 features. The downloaded `secom.data` file has 1,567 rows with 590 numeric tokens per row; this project records the source metadata/file discrepancy rather than fabricating a column. The label file uses `-1` for pass and `+1` for fail; UCI reports 104 fails. The labels also contain timestamps. Verify properties against the downloaded files.
 
 ## Data contract
 
 | Logical object | Expected content | Validation |
 |---|---|---|
-| Feature matrix X | One row per production example; 591 sensor-feature columns in the UCI description | Check row/column counts, numeric parsing, and row alignment |
+| Feature matrix X | 1,567 production examples; the downloaded raw file has 590 sensor-feature columns (the UCI catalog says 591) | Check row/column counts, numeric parsing, and row alignment; report the discrepancy |
 | Label y | One pass/fail label per example | Check exactly one label per feature row and inspect values/counts |
-| Timestamp | One timestamp per example | Parse dates, inspect missing/duplicate values, sort only after documenting sequence policy |
+| Timestamp | One quoted date/time value per example in the label file | Remove the file’s wrapping quotes, parse day/month/year timestamps, inspect missing/duplicate values, and document sequence policy |
 
 Do not call a row a wafer unless the source documentation supports that interpretation. Treat feature names as anonymized variables; do not assign physical meanings.
 

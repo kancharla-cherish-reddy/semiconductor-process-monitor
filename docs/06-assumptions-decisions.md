@@ -37,7 +37,7 @@
 
 ## Assumptions to verify
 
-- The local files match the UCI description and labels.
+- The local raw file contains 590 measurement columns although UCI metadata says 591; this discrepancy is explicitly reported. Label encoding and timestamp parsing are verified from the actual files.
 - Timestamp ordering is suitable for the intended educational chart examples.
 - The exact NCHU–Micron intake requirements will be taken from the current official admission guide, not inferred from this technical project plan.
 

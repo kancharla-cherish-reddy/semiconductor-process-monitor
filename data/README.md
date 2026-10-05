@@ -4,7 +4,7 @@
 
 Download the original files from the [UCI SECOM dataset page](https://archive.ics.uci.edu/dataset/179/secom). Place them under `data/raw/` without editing them.
 
-Before analysis, verify the downloaded file names, dimensions, label encoding, and timestamps against the UCI description. The source describes 1,567 examples, 591 features, missing values, and pass/fail labels; local files must still be checked.
+Before analysis, verify the downloaded file names, dimensions, label encoding, and timestamps. The UCI catalog describes 1,567 examples and 591 features, but the downloaded raw measurement file contains 590 numeric columns per row. Record this catalog/file discrepancy; do not invent a feature to make the counts agree. The source also documents missing values and pass/fail labels.
 
 ## Data handling
 
