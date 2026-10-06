@@ -61,3 +61,4 @@ SECOM contains anonymized sensor variables. Do not assign them physical names su
 ## Data source
 
 McCann, M. & Johnston, A. (2008). [SECOM, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/179/secom). The UCI catalog describes 1,567 examples and 591 features, while the downloaded raw measurement file has 590 numeric columns per row. We document and audit this catalog/file discrepancy rather than inventing a missing feature. The source also provides timestamps, pass/fail labels, and missing values. Check the source entry and license before redistributing data files.
+# semiconductor-process-monitor
