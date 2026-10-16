@@ -1,8 +1,8 @@
 # Product Requirements
 
-## Product scope through Week 2
+## Product scope through Week 3
 
-The first two roadmap weeks establish the project, audit the source data, make documented preprocessing decisions, and build a defensible univariate SPC foundation. The dashboard is a later milestone; the first analysis is developed in Jupyter and reusable Python modules.
+The first three roadmap weeks establish the project, audit the source data, build a defensible univariate SPC foundation, and add yield uncertainty, a separate capability lesson, corrected pass/fail associations, and exploratory PCA-based monitoring. The dashboard is a later milestone; analysis is developed in Jupyter and reusable Python modules.
 
 ## User needs
 
@@ -49,6 +49,15 @@ The first two roadmap weeks establish the project, audit the source data, make d
 5. Rule flags are traceable to the stated rules and are not described as confirmed defects.
 6. The Week 2 learning summary can explain the chart and at least one limitation in plain language.
 
-## Out of scope through Week 2
+## Acceptance criteria for the Week 3 milestone
 
-- PCA/Hotelling T²/SPE, classifier comparisons, capability claims from SECOM, DOE, and dashboard polish. These are later or optional milestones in the source roadmap.
+1. The pass fraction is reported with counts and a confidence interval.
+2. Cp/Cpk use only explicitly declared toy measurements and specifications; SECOM specifications are not invented.
+3. Sensor comparisons report group sample sizes, an effect size, raw p-values, and BH-adjusted q-values.
+4. PCA preprocessing is fitted on an earlier reference period and does not use pass/fail labels.
+5. T-squared and SPE thresholds are labeled exploratory empirical thresholds; flags are investigation prompts.
+6. Tests cover yield intervals, capability validation, BH adjustment, effect sizes, and PCA scoring.
+
+## Out of scope through Week 3
+
+- Capability claims from SECOM, classifier comparisons, DOE, and dashboard polish. These are later or optional milestones in the source roadmap.

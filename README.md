@@ -6,7 +6,7 @@ The project is designed as preparation for the NCHU–Micron INTENSE semiconduct
 
 ## Status
 
-**Milestones 0–2: documentation, Week 1 data audit, and Week 2 univariate SPC core.** Product and architecture documents, the dataset audit, I-MR calculations, Western Electric rule logic, and learning notebooks are in place. The polished Streamlit dashboard remains a later milestone.
+**Milestones 0–3: documentation, Week 1 data audit, Week 2 univariate SPC, and Week 3 yield/capability/association/PCA analysis.** Reusable Python modules, tests, and learning notebooks are in place. The polished Streamlit dashboard remains a later milestone.
 
 ## Project question
 
@@ -36,7 +36,9 @@ A separate web API or database is not needed for the initial analytics workflow.
 - [Product requirements](docs/02-product-requirements.md)
 - [System architecture](docs/03-system-architecture.md)
 - [Data contract and analysis plan](docs/04-data-contract-analysis-plan.md)
-- [Days 1–14 roadmap](docs/05-days-01-14-roadmap.md)
+- [Days 1–21 roadmap](docs/05-days-01-21-roadmap.md)
+- [Step-by-step Days 15–21 guide](docs/07-week-3-guide.md)
+- [Extended Days 1–21 roadmap](docs/05-days-01-21-roadmap.md)
 - [Assumptions and decisions](docs/06-assumptions-decisions.md)
 
 ## Run the current checks
@@ -53,6 +55,8 @@ jupyter lab
 ```
 
 Open notebooks from the repository root so their relative data paths resolve. Download the SECOM files from the UCI source linked below and place `secom.data`, `secom_labels.data`, and `secom.names` in `data/raw/`; the raw files are intentionally excluded from Git.
+
+For the Week 3 learning sequence, follow [the daily guide](docs/07-week-3-guide.md), then run `notebooks/03_yield_capability_association.ipynb` and `notebooks/04_pca_monitoring.ipynb`. The generated summary is in `reports/week3-yield-quality-pca.md`.
 
 ## Important limitations
 

@@ -6,7 +6,7 @@
 - Initial dataset: UCI SECOM.
 - Learning mode: explain fundamentals while building with AI assistance.
 - Documentation comes before implementation.
-- Near-term scope: work through Week 2 of the supplied roadmap.
+- Near-term scope: work through Week 3 of the supplied roadmap.
 - Planned presentation: Python-based interactive interface, likely Streamlit, after the analysis is established.
 
 ## Decisions
@@ -35,6 +35,18 @@
 
 **Reason:** A signal can represent a real process change, measurement issue, or data issue; evidence is needed before any corrective action.
 
+### D-005: Separate measured yield, toy capability, label association, and PCA monitoring
+
+**Decision:** Use SECOM labels for pass-fraction estimation and exploratory pass/fail comparisons; calculate Cp/Cpk only on a separate simulated teaching example with declared toy limits; fit PCA monitoring without using labels.
+
+**Reason:** The dataset does not contain engineering specifications or controlled interventions. The different analyses should not be presented as if they answer the same question.
+
+### D-006: Fit PCA reference preprocessing on earlier rows only
+
+**Decision:** Select PCA features, median-impute, scale, and fit components using the first 70% of source-order rows, then score the later rows.
+
+**Reason:** This provides a transparent educational reference/score split. The source order is not proof of continuous stable production, so the PCA flags and empirical score thresholds remain exploratory.
+
 ## Assumptions to verify
 
 - The local raw file contains 590 measurement columns although UCI metadata says 591; this discrepancy is explicitly reported. Label encoding and timestamp parsing are verified from the actual files.
@@ -50,4 +62,6 @@
 | Imbalanced pass/fail labels mislead accuracy | Report class balance and suitable metrics if classification is later added |
 | Control-chart limits are treated as product specs | Explain the two limit types separately |
 | Dashboard polish outruns analytical validity | Finish and review the analysis before building the dashboard |
+| Empirical PCA thresholds are treated as validated alarm limits | Label the thresholds exploratory and flags as investigation prompts |
+| Historical associations are presented as causes | Separate observational analysis from the later simulated randomized DOE |
 | Scope exceeds available study time | Complete the data audit and univariate SPC milestone before optional PCA, DOE, or model work |

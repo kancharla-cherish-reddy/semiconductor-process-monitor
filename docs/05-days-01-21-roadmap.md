@@ -1,6 +1,6 @@
-# Learning and Build Roadmap: Days 1–14
+# Learning and Build Roadmap: Days 1–21
 
-This adapts the first two weeks of the supplied 45-day roadmap. Each day pairs fundamentals with a small project activity. The order is a guide; daily time is not fixed.
+This adapts the first three weeks of the supplied 45-day roadmap. Each day pairs fundamentals with a small project activity. The order is a guide; daily time is not fixed.
 
 | Day | Fundamentals | Project activity / evidence |
 |---|---|---|
@@ -18,6 +18,13 @@ This adapts the first two weeks of the supplied 45-day roadmap. Each day pairs f
 | 12 | PVD, CVD, PECVD, and ALD | Discuss variable selection criteria without selecting features only because they separate outcomes |
 | 13 | Control vs. specification limits; excursions and false alarms | Explain an excursion investigation sequence |
 | 14 | Week review | Explain one chart, its assumptions, signals, and limitations in a short spoken walkthrough |
+| 15 | Yield, defects, and test | Calculate pass/fail proportions with a Wilson confidence interval |
+| 16 | Cp/Cpk assumptions | Use declared specifications only in a separate, clearly labeled toy capability example |
+| 17 | Correlation and multiple testing | Compare pass/fail measurements with effect sizes and Benjamini–Hochberg correction |
+| 18 | PCA intuition, scaling, and missing-data handling | Fit imputation, scaling, and PCA on an earlier baseline period only |
+| 19 | PCA scores and loadings | Plot the baseline and later observations; inspect largest component contributions |
+| 20 | T-squared and SPE/Q | Score the later period and flag unusual multivariate observations for investigation |
+| 21 | Weekly review | Explain capability assumptions and distinguish detection, association, and causation |
 
 ## Daily collaboration loop
 
@@ -31,3 +38,7 @@ This adapts the first two weeks of the supplied 45-day roadmap. Each day pairs f
 ## Week 2 technical boundary
 
 The Week 2 milestone is univariate SPC and its interpretation. PCA/multivariate monitoring, DOE, capability demonstration, classification comparisons, and the Streamlit dashboard are later work unless the schedule is explicitly revised. A dashboard should not be polished before its analytical content is defensible.
+
+## Week 3 technical boundary
+
+The Week 3 milestone adds a label-based pass fraction with uncertainty, a separate simulated Cp/Cpk teaching example, corrected univariate pass/fail associations, and exploratory PCA/T-squared/SPE monitoring. It does not calculate capability from SECOM, claim causal factors, or present empirical PCA thresholds as production alarms. The step-by-step student guide is in `docs/07-week-3-guide.md`.
